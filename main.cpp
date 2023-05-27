@@ -12,7 +12,8 @@ int main() {
     //request_select("SELECT * FROM files;");
     //request_select("SELECT * FROM dirs;");
     request_select("SELECT id FROM files GROUP BY hash HAVING COUNT(hash)>1 ORDER BY id ASC;");
-
+    request_select("DELETE FROM dirs WHERE fixed=1;");
+    request_select("SELECT * FROM dirs;");
 
     closeBd();
     return 0;
